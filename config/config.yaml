@@ -1,0 +1,18 @@
+data:
+  parquet_path: ../edu-data-pipeline/results/master_panel.parquet
+  world_model_checkpoint: ../edu-world-model/results/checkpoints/best.pt
+  r2_world_model_key: checkpoints/edu-world-model/best.pt
+
+distributional:
+  n_quantiles: 32
+  kappa: 1.0
+  risk_measure: cvar
+  alpha: 0.1
+  pareto_quantiles: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+
+training:
+  total_steps: 1000000
+  batch_size: 256
+  lr: 0.0003
+  checkpoint_dir: results/checkpoints
+  seed: 42
